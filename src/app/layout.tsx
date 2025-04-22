@@ -1,14 +1,9 @@
 import type { Metadata } from 'next'
-import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/header/header'
+import { Footer } from '@/components/footer/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,16 +21,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className="dark">
         <body className={inter.className}>
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
+          <Header />
           {children}
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
