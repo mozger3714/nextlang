@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { UserButton } from '@clerk/nextjs'
 
 const links = [
-  { href: '/dashboard', label: 'Home' },
+  { href: '/', label: 'Home' },
   { href: '/dashboard/schedule', label: 'Schedule' },
   { href: '/dashboard/resources', label: 'Resources' },
   { href: '/dashboard/billing', label: 'Billing' },
