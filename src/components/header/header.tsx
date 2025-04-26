@@ -26,13 +26,15 @@ export default function Header() {
       {/* Logo */}
       <div className="flex items-center gap-2 md:gap-8">
         <div className="flex items-center gap-4">
-          <Image
-            src="/_nextLang.svg"
-            alt="Logo"
-            width={140}
-            height={35}
-            className="mr-4"
-          />
+          <Link href="/">
+            <Image
+              src="/_nextLang.svg"
+              alt="Logo"
+              width={140}
+              height={35}
+              className="mr-4"
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -70,12 +72,12 @@ export default function Header() {
         >
           <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300">
             <Sun
-              className={`h-5 w-5 text-yellow-500 transition-all duration-300 ${
+              className={`h-6 w-6 text-white transition-all duration-300 ${
                 theme === 'dark' ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
               }`}
             />
             <Moon
-              className={`absolute h-5 w-5 text-blue-400 transition-all duration-300 ${
+              className={`absolute h-6 w-6 text-blue-400 transition-all duration-300 ${
                 theme === 'light'
                   ? 'scale-100 opacity-100'
                   : 'scale-0 opacity-0'
