@@ -22,7 +22,7 @@ export default function Header() {
   }, [theme])
 
   return (
-    <header className="flex items-center justify-between p-4 h-16 border-b border-border md:border-none relative z-50">
+    <header className="flex items-center justify-between py-4 h-16 border-b border-border md:border-none relative z-50">
       {/* Logo */}
       <div className="flex items-center gap-2 md:gap-8">
         <div className="flex items-center gap-4">
@@ -88,14 +88,17 @@ export default function Header() {
         </Button>
         <SignedOut>
           <SignInButton>
-            <Button className="cursor-pointer text-md transition-colors duration-300 smooth-underline">
-              Sign in
+            <Button
+              variant="outline"
+              className="cursor-pointer text-md rounded-full py-4 border-2 hover:scale-105 transition-transform"
+            >
+              Zaloguj się
             </Button>
           </SignInButton>
 
           <SignUpButton>
-            <Button className="cursor-pointer text-md transition-colors duration-300 smooth-underline">
-              Sign up
+            <Button className="cursor-pointer text-md border-2 border-[var(--color-accent)] rounded-full py-4 bg-[var(--color-accent)] text-white hover:scale-105 transition-transform">
+              Zarejestruj się
             </Button>
           </SignUpButton>
         </SignedOut>
