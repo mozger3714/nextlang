@@ -8,18 +8,14 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Button } from '../ui/button'
-import { ArrowRight, Menu, Moon, Sun, X } from 'lucide-react'
+import { ArrowRight, Menu, X } from 'lucide-react'
 import Image from 'next/image'
+import ColorModeToggler from '../color-mode-toggler/color-mode-toggler'
 
 export default function Header() {
-  const [theme, setTheme] = useState('dark')
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark')
-  }, [theme])
 
   return (
     <header className="flex items-center justify-between py-4 h-16 border-b border-border md:border-none relative z-50">
@@ -62,30 +58,7 @@ export default function Header() {
 
       {/* Right Side Buttons */}
       <div className="hidden md:flex items-center gap-6">
-        <Button
-          variant="outline"
-          onClick={() =>
-            setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
-          }
-          className="relative h-10 w-10 rounded-full cursor-pointer bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-gray-500"
-          aria-label="Change color mode"
-        >
-          <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300">
-            <Sun
-              className={`h-6 w-6 text-white transition-all duration-300 ${
-                theme === 'dark' ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
-              }`}
-            />
-            <Moon
-              className={`absolute h-6 w-6 text-blue-400 transition-all duration-300 ${
-                theme === 'light'
-                  ? 'scale-100 opacity-100'
-                  : 'scale-0 opacity-0'
-              }`}
-            />
-          </div>
-          <span className="sr-only">Toggle dark mode</span>
-        </Button>
+        <ColorModeToggler />
         <SignedOut>
           <SignInButton>
             <Button
@@ -95,7 +68,6 @@ export default function Header() {
               Zaloguj się
             </Button>
           </SignInButton>
-
           <SignUpButton>
             <Button className="cursor-pointer text-md border-2 border-[var(--color-accent)] rounded-full py-4 bg-[var(--color-accent)] text-white hover:scale-105 transition-transform">
               Zarejestruj się
@@ -138,20 +110,7 @@ export default function Header() {
           <Link href="/contact" onClick={() => setMenuOpen(false)}>
             Contact
           </Link>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => {
-              setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
-              setMenuOpen(false)
-            }}
-          >
-            {theme === 'dark' ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </Button>
+          <ColorModeToggler />
           <SignedOut>
             <SignInButton />
             <SignUpButton />
