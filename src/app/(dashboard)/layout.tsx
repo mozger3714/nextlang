@@ -10,5 +10,5 @@ export default async function DashboardLayout({
   const { userId } = await auth()
   if (!userId) redirect('/sign-in')
 
-  return <DashboardShell>{children}</DashboardShell> // no <ClerkProvider> here
+  return <DashboardShell>{children}</DashboardShell>
 }
