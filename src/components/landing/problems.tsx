@@ -160,11 +160,9 @@ const ProblemItem = ({ problem, index }: ProblemItemProps) => {
       {/* Dot */}
       <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <motion.div
-          className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-white "
+          className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-white border-2 dark:border-0"
           animate={{
-            borderColor: isInView
-              ? 'var(--color-accent)'
-              : 'var(--color-muted)',
+            borderColor: isInView ? 'var(--color-accent)' : 'white',
           }}
           transition={{ duration: 0.3 }}
         >
