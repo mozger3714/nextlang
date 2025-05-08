@@ -1,254 +1,10 @@
 'use client'
-
-// import { useInView, useScroll, motion } from 'motion/react'
-// import { useRef } from 'react'
-
-// const problems = [
-//   'Struggle to speak without overthinking?',
-//   'Fear of making grammar mistakes?',
-//   'Freeze during interviews in English?',
-//   'Feel like your vocabulary is too basic?',
-//   'Can’t understand fast native speakers?',
-//   'Don’t know how to sound more natural?',
-//   'Lack confidence in business meetings?',
-//   'Avoid conversations due to anxiety?',
-// ]
-
-// export function ProblemsSection() {
-//   const sectionRef = useRef(null)
-//   const { scrollYProgress } = useScroll({
-//     target: sectionRef,
-//     offset: ['start end', 'end start'],
-//   })
-
-//   return (
-//     <section
-//       ref={sectionRef}
-//       className="w-full py-28 px-6 sm:px-10 lg:px-20 bg-background"
-//     >
-//       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
-//         {/* Left Title */}
-//         <div className="lg:w-1/3">
-//           <h2 className="text-3xl sm:text-4xl font-bold text-foreground sticky top-28 lg:text-left text-center">
-//             Any of these <span className="text-[var(--color-accent)]">seem familiar?</span>
-//           </h2>
-//         </div>
-
-//         {/* Timeline Area */}
-//         <div className="relative lg:w-2/3 pl-8">
-//           {/* Full Line Behind */}
-//           <div className="absolute left-5 top-0 bottom-0 w-1 bg-muted rounded-full" />
-
-//           {/* Animated Progress Line */}
-//           <motion.div
-//             className="absolute left-5 top-0 w-1 bg-[var(--color-accent)] origin-top rounded-full"
-//             style={{ height: `${scrollYProgress.get() * 100}%` }}
-//           />
-
-//           <ul className="space-y-24 relative z-10">
-//             {problems.map((problem, index) => {
-//               const itemRef = useRef(null)
-//               const isVisible = useInView(itemRef, { once: true })
-
-//               return (
-//                 <li
-//                   key={index}
-//                   ref={itemRef}
-//                   className="relative pl-14 text-foreground"
-//                 >
-//                   {/* Dot */}
-//                   <motion.div
-//                     initial={{ scale: 0.5, backgroundColor: 'hsl(var(--muted))' }}
-//                     animate={
-//                       isVisible
-//                         ? { scale: 1, backgroundColor: 'hsl(var(--color-accent))' }
-//                         : { scale: 0.5 }
-//                     }
-//                     transition={{ type: 'spring', stiffness: 300 }}
-//                     className="absolute left-4 top-1 w-6 h-6 rounded-full"
-//                   />
-
-//                   {/* Text */}
-//                   <p className="text-lg sm:text-xl font-medium leading-relaxed">
-//                     {problem}
-//                   </p>
-//                 </li>
-//               )
-//             })}
-//           </ul>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// deepseek
-
-// import { useRef } from 'react'
-// import { motion, useScroll, useTransform, useInView } from 'motion/react'
-
-// export function ProblemsSection() {
-//   const problems = [
-//     {
-//       id: 1,
-//       title: 'Struggling with inconsistent branding',
-//       description:
-//         "Your marketing materials don't have a cohesive look and feel across different platforms.",
-//     },
-//     {
-//       id: 2,
-//       title: 'Low website conversion rates',
-//       description:
-//         "Visitors come to your site but don't take the desired actions like signing up or purchasing.",
-//     },
-//     {
-//       id: 3,
-//       title: 'Ineffective social media presence',
-//       description:
-//         "Your posts don't get much engagement and you're not seeing ROI from social efforts.",
-//     },
-//     {
-//       id: 4,
-//       title: 'Outdated design',
-//       description:
-//         "Your visual identity looks old-fashioned and doesn't appeal to your target audience.",
-//     },
-//     {
-//       id: 5,
-//       title: 'Poor user experience',
-//       description:
-//         'Customers find your digital products confusing or frustrating to use.',
-//     },
-//     {
-//       id: 6,
-//       title: 'Lack of clear messaging',
-//       description:
-//         "Your value proposition isn't clear and customers don't understand what makes you special.",
-//     },
-//   ]
-
-//   const containerRef = useRef(null)
-//   const titleRef = useRef(null)
-
-//   // Track when title is in view
-//   const isTitleInView = useInView(titleRef, { once: true, margin: '-100px' })
-
-//   // Track scroll progress through the timeline container
-//   const { scrollYProgress } = useScroll({
-//     target: containerRef,
-//     offset: ['start center', 'end center'],
-//   })
-
-//   // Transform scroll progress into line fill percentage
-//   const lineProgress = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
-
-//   // Calculate active index based on scroll progress
-//   const activeIndex = useTransform(
-//     scrollYProgress,
-//     [0, 1],
-//     [0, problems.length - 1]
-//   )
-
-//   return (
-//     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-//       <div className="max-w-7xl mx-auto">
-//         {/* Mobile title */}
-//         <motion.h2
-//           ref={titleRef}
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
-//           transition={{ duration: 0.5 }}
-//           className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:hidden"
-//         >
-//           Any of these seems familiar?
-//         </motion.h2>
-
-//         <div className="flex flex-col sm:flex-row gap-12">
-//           {/* Desktop title */}
-//           <div className="hidden sm:flex sm:w-1/3 items-center justify-center">
-//             <motion.h2
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
-//               transition={{ duration: 0.5, delay: 0.2 }}
-//               className="text-3xl sm:text-4xl font-bold text-gray-900"
-//             >
-//               Any of these seems familiar?
-//             </motion.h2>
-//           </div>
-
-//           {/* Timeline */}
-//           <div className="sm:w-2/3" ref={containerRef}>
-//             <div className="relative">
-//               {/* Vertical line */}
-//               <div className="absolute left-6 sm:left-8 top-0 h-full w-0.5 bg-gray-200">
-//                 <motion.div
-//                   className="absolute top-0 left-0 w-full h-full bg-orange-500 origin-top"
-//                   style={{ scaleY: lineProgress }}
-//                 />
-//               </div>
-
-//               {/* Problem items */}
-//               <div className="space-y-16 pl-16 sm:pl-24">
-//                 {problems.map((problem, index) => {
-//                   const itemRef = useRef(null)
-//                   const isInView = useInView(itemRef, {
-//                     margin: '-50px 0px -100px 0px',
-//                     amount: 0.5,
-//                   })
-
-//                   return (
-//                     <div key={problem.id} className="relative" ref={itemRef}>
-//                       {/* Dot */}
-//                       <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-//                         <motion.div
-//                           className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
-//                           animate={{
-//                             backgroundColor: isInView ? '#f97316' : '#e5e7eb',
-//                           }}
-//                           transition={{ duration: 0.3 }}
-//                         >
-//                           <motion.div
-//                             className="w-3 h-3 sm:w-4 sm:h-4 bg-white rounded-full"
-//                             initial={{ scale: 0 }}
-//                             animate={{ scale: isInView ? 1 : 0 }}
-//                             transition={{ duration: 0.3 }}
-//                           />
-//                         </motion.div>
-//                       </div>
-
-//                       {/* Content */}
-//                       <motion.div
-//                         initial={{ opacity: 0, x: 20 }}
-//                         animate={isInView ? { opacity: 1, x: 0 } : {}}
-//                         transition={{ duration: 0.5, delay: index * 0.1 }}
-//                         className={`p-6 rounded-lg ${
-//                           isInView ? 'bg-gray-50 shadow-md' : 'bg-white'
-//                         }`}
-//                       >
-//                         <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">
-//                           {problem.title}
-//                         </h3>
-//                         <p className="text-gray-600">{problem.description}</p>
-//                       </motion.div>
-//                     </div>
-//                   )
-//                 })}
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-//deepseek v2
 import { useRef } from 'react'
 import { useInView, motion } from 'motion/react'
 
 interface Problem {
   id: number
-  title: string
+  title: React.ReactNode
   description: string
 }
 
@@ -256,52 +12,93 @@ export function ProblemsSection() {
   const problems: Problem[] = [
     {
       id: 1,
-      title: 'Struggle to speak without overthinking?',
+      title: (
+        <>
+          Trudno mówić bez nadmiernego{' '}
+          <span className="text-[var(--color-accent)]">zastanawiania się</span>?
+        </>
+      ),
       description:
-        "Your marketing materials don't have a cohesive look and feel across different platforms.",
+        'Wiesz, co chcesz powiedzieć, ale analizujesz każde słowo i blokujesz się, zanim wypowiesz zdanie.',
     },
     {
       id: 2,
-      title: 'Fear of making grammar mistakes?',
+      title: (
+        <>
+          Paraliżuje Cię{' '}
+          <span className="text-[var(--color-accent)]">strach</span> przed
+          błędami?
+        </>
+      ),
       description:
-        "Visitors come to your site but don't take the desired actions like signing up or purchasing.",
+        'Unikasz mówienia po angielsku, bo boisz się, że ktoś wyłapie błąd gramatyczny lub złe słowo.',
     },
     {
       id: 3,
-      title: 'Freeze during interviews in English?',
+      title: (
+        <>
+          Nie wiesz co powiedzieć na{' '}
+          <span className="text-[var(--color-accent)]">
+            rozmowie rekrutacyjnej
+          </span>
+          ?
+        </>
+      ),
       description:
-        "Your posts don't get much engagement and you're not seeing ROI from social efforts.",
+        'W domu wszystko brzmi dobrze, ale w stresującej sytuacji w głowie pojawia się pustka.',
     },
     {
       id: 4,
-      title: 'Feel like your vocabulary is too basic?',
+      title: (
+        <>
+          Masz wrażenie, że Twoje{' '}
+          <span className="text-[var(--color-accent)]">słownictwo</span> jest
+          zbyt proste?
+        </>
+      ),
       description:
-        "Your visual identity looks old-fashioned and doesn't appeal to your target audience.",
+        'Powtarzasz te same zwroty i czujesz, że Twój język nie odzwierciedla Twojego poziomu wiedzy.',
     },
     {
       id: 5,
-      title: 'Can’t understand fast native speakers?',
+      title: (
+        <>
+          Nie rozumiesz, gdy ktoś mówi{' '}
+          <span className="text-[var(--color-accent)]">szybko</span>?
+        </>
+      ),
       description:
-        'Customers find your digital products confusing or frustrating to use.',
+        'Kiedy Anglik lub Amerykanin przyspiesza, gubisz się po kilku sekundach i odcinasz się od rozmowy.',
     },
     {
       id: 6,
-      title: 'Don’t know how to sound more natural?',
+      title: (
+        <>
+          Nie wiesz, jak brzmieć{' '}
+          <span className="text-[var(--color-accent)]">naturalnie</span>?
+        </>
+      ),
       description:
-        "Your value proposition isn't clear and customers don't understand what makes you special.",
+        'Twoje zdania są poprawne, ale brzmią jak z podręcznika. Brakuje Ci swobody i autentyczności.',
     },
     {
-      id: 6,
-      title: 'Lack confidence in business meetings?',
+      id: 7,
+      title: (
+        <>
+          Brakuje Ci{' '}
+          <span className="text-[var(--color-accent)]">pewności siebie</span> na
+          spotkaniach?
+        </>
+      ),
       description:
-        "Your value proposition isn't clear and customers don't understand what makes you special.",
+        'Wiesz, co chcesz powiedzieć, ale w anglojęzycznym środowisku czujesz się niepewnie i biernie.',
     },
-    {
-      id: 6,
-      title: 'Avoid conversations due to anxiety?',
-      description:
-        "Your value proposition isn't clear and customers don't understand what makes you special.",
-    },
+    // {
+    //   id: 8,
+    //   title: 'Unikasz rozmów z obawy przed oceną?',
+    //   description:
+    //     'Masz coś do powiedzenia, ale rezygnujesz, bo boisz się, że zabrzmisz "głupio" lub nienaturalnie.',
+    // },
   ]
 
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -310,18 +107,26 @@ export function ProblemsSection() {
   return (
     <section className="w-full py-28 px-6 sm:px-10 lg:px-20 bg-background">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
-        {/* Left Title - Sticky */}
+        {/* Left Title */}
         <div className="lg:w-1/3">
-          <motion.h2
+          <motion.div
             ref={titleRef}
             initial={{ opacity: 0, y: 20 }}
             animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl font-bold sticky top-28 lg:text-left text-center"
+            className="sticky md:top-36 p-6 bg-gray-50 rounded-lg shadow-sm"
           >
-            Any of these{' '}
-            <span className="text-[var(--color-accent)]">seem familiar?</span>
-          </motion.h2>
+            <h2 className="text-2xl sm:text-4xl font-bold leading-12 dark:text-gray-900 mb-4 text-center lg:text-left">
+              Coś z tego wydaje się{' '}
+              <span className="text-[var(--color-accent)]">znajome</span>
+              🤔?
+            </h2>
+            <p className="text-gray-600 text-center lg:text-left mb-4">
+              Nie jesteś sam! Wiele osób zmaga się z podobnymi problemami i my
+              dobrze wiemy jak z nimi poradzić.
+            </p>
+            <div className="absolute -bottom-7 left-8 w-0 h-0 border-l-[16px] border-r-[25px] border-t-[30px] border-l-transparent border-r-transparent border-t-gray-50  "></div>
+          </motion.div>
         </div>
 
         {/* Timeline Area */}
@@ -345,8 +150,9 @@ interface ProblemItemProps {
 const ProblemItem = ({ problem, index }: ProblemItemProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, {
-    margin: '-50px 0px -100px 0px',
-    amount: 0.5,
+    once: true,
+    margin: '-20% 0px -20% 0px',
+    amount: 0.3,
   })
 
   return (
@@ -354,19 +160,23 @@ const ProblemItem = ({ problem, index }: ProblemItemProps) => {
       {/* Dot */}
       <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <motion.div
-          className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
+          className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-white "
           animate={{
-            backgroundColor: isInView
+            borderColor: isInView
               ? 'var(--color-accent)'
               : 'var(--color-muted)',
           }}
           transition={{ duration: 0.3 }}
         >
           <motion.div
-            className="w-3 h-3 sm:w-4 sm:h-4 bg-white rounded-full"
+            className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[var(--color-accent)] origin-center"
             initial={{ scale: 0 }}
             animate={{ scale: isInView ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{
+              duration: 0.5,
+              delay: isInView ? index * 0.15 : 0,
+              ease: 'backOut',
+            }}
           />
         </motion.div>
       </div>
@@ -376,9 +186,7 @@ const ProblemItem = ({ problem, index }: ProblemItemProps) => {
         initial={{ opacity: 0, x: 20 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className={`p-6 rounded-lg ${
-          isInView ? 'bg-gray-50 shadow-md' : 'bg-white'
-        } ml-8`}
+        className="p-6 rounded-lg bg-gray-50 shadow-sm ml-8 hover:shadow-md transition-shadow"
       >
         <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">
           {problem.title}

@@ -29,7 +29,7 @@ export function SectionAnimatedDivider() {
             initial={{ scale: 0 }}
             animate={{ scale: lineVisible ? 1 : 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="w-3 h-3 rounded-full bg-[var(--color-accent)] shadow-[0_0_8px_var(--color-accent)]"
+            className="w-3 h-3 rounded-full bg-[var(--color-accent)] shadow-[0_0_5px_var(--color-accent)]"
           />
         </div>
       </motion.div>
