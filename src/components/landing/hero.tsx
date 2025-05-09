@@ -9,11 +9,15 @@ export function Hero() {
       <div className="flex w-full flex-col-reverse lg:flex-row items-center justify-between gap-8 ">
         {/* Left side */}
         <div className="flex-1 text-center lg:text-left space-y-6">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight space-y-2">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+            <span className="sr-only">
+              Zrób większą karierę. Osiągnij wyższe zarobki. Znajdź pracę w IT.
+            </span>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              aria-hidden="true"
             >
               Zrób większą{' '}
               <span className="text-[var(--color-accent)]">karierę</span>
@@ -22,6 +26,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
+              aria-hidden="true"
             >
               Osiągnij wyższe{' '}
               <span className="text-[var(--color-accent)]">zarobki</span>
@@ -30,6 +35,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
+              aria-hidden="true"
             >
               Znajdź pracę w{' '}
               <span className="text-[var(--color-accent)]">IT</span>
@@ -40,13 +46,21 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.2 }}
           >
-            <p className="text-muted-foreground text-xl">
-              Wszystko zaczyna się od{' '}
-              <span className="text-[var(--color-accent)] font-semibold">
-                języka
+            <h2 className="text-muted-foreground text-xl max-w-2xl font-normal">
+              <strong>Angielski w IT</strong> to nie atut. To{' '}
+              <span className="text-[var(--color-accent)] font-semibold underline">
+                konieczność
               </span>
-              . Zbuduj swój angielski jak mistrz kodu.
-            </p>
+              . Ponad{' '}
+              <span className="text-[var(--color-accent)] font-semibold">
+                80%
+              </span>{' '}
+              ofert pracy w IT{' '}
+              <span className="text-[var(--color-accent)] font-semibold">
+                wymaga
+              </span>{' '}
+              znajomości angielskiego. Zbuduj swój angielski jak mistrz kodu.
+            </h2>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

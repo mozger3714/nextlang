@@ -105,7 +105,7 @@ export function ProblemsSection() {
   const isTitleInView = useInView(titleRef, { once: true })
 
   return (
-    <section className="w-full py-28 px-6 sm:px-10 lg:px-20 bg-background">
+    <section className="w-full py-16 px-6 sm:px-10 lg:px-20 bg-background">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
         {/* Left Title */}
         <div className="lg:w-1/3">
@@ -117,8 +117,8 @@ export function ProblemsSection() {
             className="sticky md:top-36 p-6 bg-gray-50 rounded-lg shadow-sm"
           >
             <h2 className="text-2xl sm:text-4xl font-bold leading-12 dark:text-gray-900 mb-4 text-center lg:text-left">
-              Coś z tego wydaje się{' '}
-              <span className="text-[var(--color-accent)]">znajome</span>
+              Coś z tego brzmi{' '}
+              <span className="text-[var(--color-accent)]">znajomie</span>
               🤔?
             </h2>
             <p className="text-gray-600 text-center lg:text-left mb-4">

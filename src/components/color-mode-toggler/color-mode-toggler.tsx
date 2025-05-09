@@ -20,7 +20,7 @@ export default function ColorModeToggler() {
         <div className="absolute inset-0 overflow-hidden rounded-full">
           {/* Sun trail (yellow) */}
           <div
-            className={`absolute top-0 left-0 w-full h-full bg-gradient-to-r from-yellow-200 to-transparent transition-opacity duration-500 ${
+            className={`absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white to-yellow-200 transition-opacity duration-500 ${
               theme === 'light' ? 'opacity-100' : 'opacity-0'
             }`}
           ></div>
