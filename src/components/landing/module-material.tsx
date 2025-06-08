@@ -12,7 +12,9 @@ const moduleAreas = [
     items: [
       'Powitania, pytania o dzień, samopoczucie',
       'Mówienie o sobie bez zastanowienia',
+      'Mówienie o doświadczeniu i projektach',
       'Opisywanie miejsca pracy, zespołu, codziennych obowiązków',
+      'Podstawowa gramatyka i niezbędne czasu',
     ],
   },
   {
@@ -22,6 +24,8 @@ const moduleAreas = [
       'Standupy, taski, problemy techniczne',
       'Zgłaszanie błędów, proszenie o pomoc',
       'Chwalenie innych, feedback',
+      'Opisywanie statusu prac',
+      'Rozszerzanie gramatyki i czasów przez kontekst pracy',
     ],
   },
   {
@@ -30,16 +34,32 @@ const moduleAreas = [
     items: [
       'Omawianie wymagań i postępów',
       'Tłumaczenie decyzji projektowych',
-      'Przyjmowanie i zadawanie pytań',
+      'Zadawanie pytań i doprecyzowywanie informacji',
+      'Small talk w sytuacjach zawodowych',
     ],
   },
   {
     value: 'technical',
-    title: '👨‍💻 Rozmowy techniczne (front, back, UX)',
+    title: '👨‍💻 Rozmowy techniczne',
     items: [
+      'Zagadnienia techniczne (np. algorytmy, architektura, bazy danych)',
       'Opisywanie działania aplikacji',
-      'Słownictwo do code review, pair programmingu',
-      'Tłumaczenie flowu użytkownika / logiki API',
+      'Zagadnienia z zakresu programowania',
+      'Zagadnienia z zakresu designu',
+      'Zagadnienia z zakresu testowania',
+      'Trening komentowania kodu i code review',
+      'Tłumaczenie flowu użytkownika i UX',
+      'Rozmowy z innymi programistami o kodzie i strukturze projektu',
+    ],
+  },
+  {
+    value: 'scrum',
+    title: '📈 Metodologia pracy SCRUM',
+    items: [
+      'Podstawowe pojęcia (backlog, sprint, user story, review)',
+      'Udział w sprint planningu i retrospektywach',
+      'Rola Product Ownera i Scrum Mastera – jak z nimi rozmawiać',
+      'Mówienie o zależnościach, blockerach i priorytetach',
     ],
   },
   {
@@ -47,17 +67,21 @@ const moduleAreas = [
     title: '🎤 Rozmowy rekrutacyjne (symulacje)',
     items: [
       'Mówienie o doświadczeniu i projektach',
-      'Typowe pytania techniczne w uproszczonej formie',
-      'Feedback i autoprezentacja',
+      'Typowe pytania techniczne – wersja angielska uproszczona',
+      'Rozmowa o technologiach i decyzjach projektowych',
+      'Trening autoprezentacji i elevator pitch',
+      'Feedback i omawianie swoich mocnych i słabych stron',
     ],
   },
   {
-    value: 'subconscious',
-    title: '🧠 Angielski podświadomy',
+    value: 'automation',
+    title: '🎯 Automatyzacja językowa i schematy mówienia',
     items: [
-      'Powtarzalne struktury zdań (np. “I’d rather…”, “What I mean is…”)',
-      'Nauka schematów językowych przez praktykę',
-      '„Zautomatyzuj” mówienie bez gramatycznego stresu',
+      'Gotowe struktury zdań (np. “The reason is that...”, “What I’d suggest is…”)',
+      'Trening powtarzalnych zwrotów i klisz zawodowych',
+      'Wypowiadanie się płynnie bez analizy gramatycznej',
+      'Idiomy angielskie w kontekście IT',
+      'Budowanie naturalnych wypowiedzi z automatu',
     ],
   },
 ]
@@ -89,13 +113,13 @@ export function ModuleMaterialSection() {
                 </span>
               </AccordionTrigger>
 
-              <AccordionContent className="px-6 pb-6 pt-0 border-0">
-                <div className="mt-4 pl-2">
+              <AccordionContent className="px-6 py-6 border-0 bg-white/70 dark:bg-[#2d2d42]/70 shadow-sm rounded-xl mt-5 mb-6">
+                <div className="pl-2">
                   <ul className="space-y-3">
                     {module.items.map((item, idx) => (
                       <li
                         key={idx}
-                        className="relative pl-6 text-gray-700 dark:text-gray-300 before:absolute before:left-0 before:top-[0.6em] before:w-2 before:h-2 before:rounded-full before:bg-[var(--color-accent)]"
+                        className="font-semibold relative pl-6 text-gray-700 dark:text-gray-300 before:absolute before:left-0 before:top-[0.6em] before:w-2 before:h-2 before:rounded-full before:bg-[var(--color-accent)]"
                       >
                         {item}
                       </li>

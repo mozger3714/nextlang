@@ -1,23 +1,11 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { StripePrice } from '@/constants/types'
 import { useEffect, useState } from 'react'
 
-type StripeProduct = {
-  id: string
-  unit_amount: number
-  currency: string
-  recurring: {
-    interval: string
-  }
-  product: {
-    name: string
-    description: string
-  }
-}
-
 export default function PricingPage() {
-  const [prices, setPrices] = useState<StripeProduct[]>([])
+  const [prices, setPrices] = useState<StripePrice[]>([])
 
   useEffect(() => {
     async function fetchPrices() {

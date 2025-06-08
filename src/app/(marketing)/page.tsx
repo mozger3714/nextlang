@@ -2,6 +2,7 @@ import { SectionAnimatedDivider } from '@/components/divider/animated-divider'
 import { ComparisonSection } from '@/components/landing/comparison-section'
 import { Hero } from '@/components/landing/hero'
 import { ModuleMaterialSection } from '@/components/landing/module-material'
+import { PricingSection } from '@/components/landing/pricing-section'
 import { ProblemsSection } from '@/components/landing/problems'
 import { WhyUsSection } from '@/components/landing/why-us-section'
 
@@ -42,6 +43,7 @@ export default function Home() {
       <ComparisonSection />
       <WhyUsSection />
       <ModuleMaterialSection />
+      <PricingSection />
     </main>
   )
 }

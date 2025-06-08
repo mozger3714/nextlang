@@ -12,12 +12,13 @@ export async function POST(req: Request) {
   if (!priceId) {
     return NextResponse.json({ error: 'Missing price ID' }, { status: 400 })
   }
+
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     mode: 'subscription',
     line_items: [
       {
-        price: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID!,
+        price: priceId, // Use the priceId from the form, not from env
         quantity: 1,
       },
     ],
