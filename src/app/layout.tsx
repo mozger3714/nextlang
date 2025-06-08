@@ -6,7 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'NextLang English Academy - English for Developers',
+  title: 'SpeakLab English Academy - English for Developers',
   description: 'English for IT and Developers – Learn the smart way.',
 }
 
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en" className="dark">
+      <html lang="pl" suppressHydrationWarning>
         <body className={inter.className}>{children}</body>
       </html>
     </ClerkProvider>

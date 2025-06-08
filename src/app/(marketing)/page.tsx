@@ -8,7 +8,7 @@ import { WhyUsSection } from '@/components/landing/why-us-section'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'NextLang English Academy - Angielski dla IT ',
+  title: 'SpeakLab English Academy - Angielski dla IT ',
   description:
     'Ucz się angielskiego z myślą o IT. Zdobądź pracę programisty, podnieś zarobki i rozwijaj swoją karierę w branży technologicznej.',
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description:
       'Zdobądź przewagę na rynku pracy dzięki skutecznej nauce angielskiego IT.',
     url: 'https://twojadomena.pl/',
-    siteName: 'TwojaSzkoła',
+    siteName: 'SpeakLab English Academy',
     locale: 'pl_PL',
     type: 'website',
   },

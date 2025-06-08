@@ -13,7 +13,7 @@ export function Topbar() {
       >
         <ArrowLeft /> Back to Home page
       </Link>
-      <Image src="/_nextLang.svg" alt="NextLang logo" width={140} height={35} />
+      <Image src="/speaklab-dark.svg" alt="SpeakLab English Academy logo" width={140} height={35} />
       <UserButton />
     </header>
   )

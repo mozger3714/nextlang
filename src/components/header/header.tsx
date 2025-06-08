@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <Link href="/">
             <Image
-              src="/_nextLang.svg"
+              src="/speaklab-dark.svg"
               alt="Logo"
               width={140}
               height={35}
