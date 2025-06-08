@@ -130,7 +130,7 @@ export function ProblemsSection() {
         </div>
 
         {/* Timeline Area */}
-        <div className="relative lg:w-2/3 pl-8 sm:pl-16">
+        <div className="relative lg:w-2/3 pl-2 sm:pl-8">
           <div className="space-y-16">
             {problems.map((problem, index) => (
               <ProblemItem key={problem.id} problem={problem} index={index} />

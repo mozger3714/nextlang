@@ -1,19 +1,34 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export default function ColorModeToggler() {
-  const [theme, setTheme] = useState('dark')
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark')
-  }, [theme])
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className="relative w-16 h-8 rounded-full bg-gray-700">
+        <div className="absolute top-1 left-1 w-6 h-6 rounded-full translate-x-8 bg-gray-800"></div>
+      </div>
+    )
+  }
+
   return (
     <>
       <label htmlFor="theme-toggle" className="sr-only">
-        Toggle dark mode
+        Przełącznik trybu kolorów
       </label>
       <button
         id="theme-toggle"
-        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        onClick={() => {
+          const newTheme = theme === 'dark' ? 'light' : 'dark'
+          setTheme(newTheme)
+        }}
         className="relative w-16 h-8 rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         {/* Track with sun/moon trails */}

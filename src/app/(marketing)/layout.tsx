@@ -9,11 +9,9 @@ export default function MarketingLayout({
 }) {
   return (
     <>
-      <Container>
-        <Header />
-        {children}
-        <Footer />
-      </Container>
+      <Header />
+      <Container>{children}</Container>
+      <Footer />
     </>
   )
 }

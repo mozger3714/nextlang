@@ -9,7 +9,7 @@ export function Hero() {
       <div className="flex w-full flex-col-reverse lg:flex-row items-center justify-between gap-8 ">
         {/* Left side */}
         <div className="flex-1 text-center lg:text-left space-y-6">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance">
             <span className="sr-only">
               Zrób większą karierę. Osiągnij wyższe zarobki. Znajdź pracę w IT.
             </span>

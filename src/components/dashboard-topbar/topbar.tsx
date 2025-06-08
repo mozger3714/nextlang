@@ -1,10 +1,25 @@
+'use client'
+
+import { useTheme } from 'next-themes'
 import { UserButton } from '@clerk/nextjs'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export function Topbar() {
+  const { theme } = useTheme()
+  const [isReady, setIsReady] = useState(false)
+
+  useEffect(() => {
+    setIsReady(true)
+  }, [])
+
+  // Always use dark theme until hydration completes
+  const displayTheme = isReady ? theme : 'dark'
+
+  console.log('Current theme:', displayTheme)
+
   return (
     <header className="flex items-center justify-between p-4 h-16 border-b border-border relative z-50 w-full">
       <Link
@@ -13,7 +28,14 @@ export function Topbar() {
       >
         <ArrowLeft /> Back to Home page
       </Link>
-      <Image src="/speaklab-dark.svg" alt="SpeakLab English Academy logo" width={140} height={35} />
+      <Image
+        src={
+          displayTheme === 'dark' ? '/speaklab-dark.svg' : '/speaklab-light.svg'
+        }
+        alt="SpeakLab English Academy logo"
+        width={140}
+        height={35}
+      />
       <UserButton />
     </header>
   )
