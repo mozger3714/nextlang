@@ -14,13 +14,14 @@ const moduleAreas = [
       'Mówienie o sobie bez zastanowienia',
       'Mówienie o doświadczeniu i projektach',
       'Opisywanie miejsca pracy, zespołu, codziennych obowiązków',
-      'Podstawowa gramatyka i niezbędne czasu',
+      'Podstawowa gramatyka i niezbędne angielskie czasy',
     ],
   },
   {
     value: 'team',
     title: '🎙 Codzienna komunikacja w zespole',
     items: [
+      'Business English – codzienne rozmowy w pracy',
       'Standupy, taski, problemy techniczne',
       'Zgłaszanie błędów, proszenie o pomoc',
       'Chwalenie innych, feedback',

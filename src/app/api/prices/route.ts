@@ -11,5 +11,16 @@ export async function GET() {
     expand: ['data.product'],
   })
 
-  return NextResponse.json(prices.data)
+   const sortedPrices = prices.data.sort((a, b) => {
+  const aProduct = a.product as Stripe.Product
+  const bProduct = b.product as Stripe.Product
+  
+  const aOrder = parseInt(aProduct.metadata?.sort_order || "999")
+  const bOrder = parseInt(bProduct.metadata?.sort_order || "999")
+  
+  return aOrder - bOrder
+})
+
+  return NextResponse.json(sortedPrices);
+
 }
