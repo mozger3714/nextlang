@@ -11,6 +11,7 @@ const moduleAreas = [
     title: '🚀 Start & przełamywanie bariery',
     items: [
       'Powitania, pytania o dzień, samopoczucie',
+      'Jak brzmieć lepiej po angielsku',
       'Mówienie o sobie bez zastanowienia',
       'Mówienie o doświadczeniu i projektach',
       'Opisywanie miejsca pracy, zespołu, codziennych obowiązków',
@@ -120,7 +121,7 @@ export function ModuleMaterialSection() {
                     {module.items.map((item, idx) => (
                       <li
                         key={idx}
-                        className="font-semibold relative pl-6 text-gray-700 dark:text-gray-300 before:absolute before:left-0 before:top-[0.6em] before:w-2 before:h-2 before:rounded-full before:bg-[var(--color-accent)]"
+                        className="font-semibold relative pl-6 text-[16px] text-gray-700 dark:text-gray-300 before:absolute before:left-0 before:top-[0.6em] before:w-2 before:h-2 before:rounded-full before:bg-[var(--color-accent)]"
                       >
                         {item}
                       </li>
