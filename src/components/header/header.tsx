@@ -88,6 +88,14 @@ export default function Header() {
 
           {/* Right Side Buttons */}
           <div className="hidden md:flex items-center gap-6">
+            <Button
+              className="cursor-pointer text-md font-semibold border-2 border-white rounded-full py-4 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
+              onClick={() =>
+                window.open('https://calendly.com/mr-smeett/darmowa-lekcja')
+              }
+            >
+              Darmowa lekcja próbna
+            </Button>
             <ColorModeToggler />
             <SignedOut>
               <div className="flex gap-4">

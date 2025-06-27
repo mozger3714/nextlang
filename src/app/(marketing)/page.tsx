@@ -1,5 +1,6 @@
 import { SectionAnimatedDivider } from '@/components/divider/animated-divider'
 import { ComparisonSection } from '@/components/landing/comparison-section'
+import { ContactSection } from '@/components/landing/contact'
 import { Hero } from '@/components/landing/hero'
 import { ModuleMaterialSection } from '@/components/landing/module-material'
 import { PricingSection } from '@/components/landing/pricing-section'
@@ -44,6 +45,7 @@ export default function Home() {
       <WhyUsSection />
       <ModuleMaterialSection />
       <PricingSection />
+      <ContactSection />
     </main>
   )
 }
