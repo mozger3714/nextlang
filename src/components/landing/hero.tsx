@@ -74,14 +74,14 @@ export function Hero() {
         </div>
 
         {/* Right side */}
-        <div className="flex">
+        <div className="flex-1">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Image
-              src="/spite.png"
+              src="/header-1.gif"
               alt="Konwersacje po angielsku"
               width={600}
               height={600}
