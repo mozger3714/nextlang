@@ -89,7 +89,7 @@ export default function Header() {
           {/* Right Side Buttons */}
           <div className="hidden md:flex items-center gap-6">
             <Button
-              className="cursor-pointer text-md font-semibold border-2 border-white rounded-full py-4 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
+              className="cursor-pointer text-md font-semibold border-2 border-dashed border-white rounded-full py-4 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
               onClick={() =>
                 window.open('https://calendly.com/mr-smeett/darmowa-lekcja')
               }
@@ -182,6 +182,14 @@ export default function Header() {
               </Link>
 
               <div className="w-full flex flex-col gap-4 pt-8">
+                <Button
+                  className="cursor-pointer text-md font-semibold border-2 border-dashed border-white rounded-full py-6 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
+                  onClick={() =>
+                    window.open('https://calendly.com/mr-smeett/darmowa-lekcja')
+                  }
+                >
+                  Darmowa lekcja próbna
+                </Button>
                 <SignedOut>
                   <SignInButton>
                     <Button
