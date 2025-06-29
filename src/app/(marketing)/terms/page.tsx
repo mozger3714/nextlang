@@ -8,7 +8,7 @@ export default function Terms() {
         1. Postanowienia ogólne
       </h2>
       <p className="mb-4">
-        <ul>
+        <ul className="list-disc pl-6">
           <li>
             Usługi edukacyjne świadczone są przez SpeakLab English Academy w
             formie online.
@@ -21,12 +21,9 @@ export default function Terms() {
       </p>
       <h2 className="text-2xl font-semibold mt-6 mb-4">2. Rodzaje usług</h2>
       <p className="mb-4">
-        <ul>
+        <ul className="list-disc pl-6">
           <li>Zajęcia grupowe – 4 godziny tygodniowo w małych grupach,</li>
-          <li>
-            Zajęcia indywidualne – z planem rozwoju i/lub przygotowaniem do
-            rozmowy kwalifikacyjnej,
-          </li>
+          <li>Zajęcia indywidualne – do 3 godzin w tygodniu z lektorem,</li>
           <li>Darmowa lekcja próbna – 30 minut, po uprzedniej rezerwacji.</li>
         </ul>
       </p>
@@ -34,7 +31,7 @@ export default function Terms() {
         3. Subskrypcja i płatności
       </h2>
       <p className="mb-4">
-        <ul>
+        <ul className="list-disc pl-6">
           <li>Płatności realizowane są miesięcznie przez system Stripe,</li>
           <li>
             Subskrypcję można anulować w każdej chwili – dostęp pozostaje do
@@ -62,7 +59,7 @@ export default function Terms() {
         5. Wymagania techniczne
       </h2>
       <p className="mb-4">Do korzystania z lekcji online wymagane jest:</p>
-      <ul>
+      <ul className="list-disc pl-6">
         <li>stabilne połączenie internetowe,</li>
         <li>przeglądarka internetowa,</li>
         <li>słuchawki i mikrofon,</li>

@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
         Zbieramy dane osobowe tylko w zakresie niezbędnym do świadczenia naszych
         usług:
       </p>
-      <ul className="mb-4">
+      <ul className="mb-4 list-disc pl-6">
         <li>
           Imię i adres e-mail – w formularzu kontaktowym lub przy zapisie na
           lekcję próbną,
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
         3. Cel przetwarzania danych
       </h2>
       <p>Dane osobowe są przetwarzane w celu:</p>
-      <ul className="mb-4">
+      <ul className="mb-4 list-disc pl-6">
         <li>świadczenia usług edukacyjnych,</li>
         <li>realizacji płatności subskrypcyjnych,</li>
         <li>zapewnienia kontaktu z użytkownikami,</li>
@@ -61,7 +61,7 @@ export default function PrivacyPolicy() {
         5. Udostępnianie danych
       </h2>
       <p className="mb-4">Dane mogą być przekazywane:</p>
-      <ul>
+      <ul className="list-disc pl-6">
         <li>firmie Stripe – do obsługi płatności,</li>
         <li>firmie Clerk – do zarządzania kontami użytkowników,</li>
         <li>podmiotom wspierającym utrzymanie strony (np. hosting).</li>
@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
       </p>
       <h2 className="text-2xl font-semibold mt-6 mb-4">6. Prawa użytkownika</h2>
       <p className="mb-2">Masz prawo do:</p>
-      <ul>
+      <ul className="list-disc pl-6">
         <li>dostępu do swoich danych,</li>
         <li>ich sprostowania,</li>
         <li>usunięcia („prawo do bycia zapomnianym”),</li>
