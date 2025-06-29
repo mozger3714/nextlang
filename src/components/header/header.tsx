@@ -66,10 +66,10 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex gap-10 text-md font-medium">
               <Link
-                href="/pricing"
+                href="#pricing"
                 className="hover:text-primary p-2 transition-colors duration-300 smooth-underline"
               >
-                Pricing
+                Cennik
               </Link>
               <Link
                 href="/blog"
@@ -78,10 +78,10 @@ export default function Header() {
                 Blog
               </Link>
               <Link
-                href="/contact"
+                href="#contact"
                 className="hover:text-primary p-2 transition-colors duration-300 smooth-underline"
               >
-                Contact
+                Kontakt
               </Link>
             </nav>
           </div>
@@ -160,7 +160,8 @@ export default function Header() {
           >
             <div className="flex flex-col items-center gap-8 text-xl font-medium">
               <Link
-                href="/pricing"
+                href="#pricing"
+                scroll={true}
                 onClick={() => setMenuOpen(false)}
                 className="w-full py-4 border-b border-border/20 text-center hover:text-primary transition-colors"
               >
@@ -174,7 +175,8 @@ export default function Header() {
                 Blog
               </Link>
               <Link
-                href="/contact"
+                href="#contact"
+                scroll={true}
                 onClick={() => setMenuOpen(false)}
                 className="w-full py-4 border-b border-border/20 text-center hover:text-primary transition-colors"
               >

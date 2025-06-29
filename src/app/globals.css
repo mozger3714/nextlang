@@ -21,6 +21,10 @@
   --foreground: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .smooth-underline {
     @apply relative;
