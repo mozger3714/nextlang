@@ -9,16 +9,22 @@ import {
 
 const features = [
   {
+    icon: <Mic className="w-8 h-8 mx-auto  text-[var(--color-accent)]" />,
+    title: 'Główny nacisk na mówienię',
+    description:
+      'Odblokuj się, przełamaj barierę i zacznij wreście mówić płynnie',
+  },
+  {
+    icon: <Compass className="w-8 h-8 mx-auto  text-[var(--color-accent)]" />,
+    title: 'Trening rozmów rekrutacyjnych',
+    description:
+      'Dowiesz się, jak się wyróżnić, co mówić i czego unikać podczas rekrutacji.',
+  },
+  {
     icon: <Briefcase className="w-8 h-8 mx-auto text-[var(--color-accent)]" />,
     title: 'Business English od praktyków',
     description:
       'Ucz się języka, którego faktycznie używa się w pracy – bez zbędnej teorii.',
-  },
-  {
-    icon: <Compass className="w-8 h-8 mx-auto  text-[var(--color-accent)]" />,
-    title: 'Praktyczne wskazówki kariery',
-    description:
-      'Dowiesz się, jak się wyróżnić, co mówić i czego unikać podczas rekrutacji.',
   },
   {
     icon: <Users className="w-8 h-8 mx-auto  text-[var(--color-accent)]" />,
@@ -33,12 +39,6 @@ const features = [
     title: 'Symulacje realnych sytuacji',
     description:
       'Spotkania, maile, prezentacje, negocjacje – ćwiczymy je razem krok po kroku.',
-  },
-  {
-    icon: <Mic className="w-8 h-8 mx-auto  text-[var(--color-accent)]" />,
-    title: 'Trening rozmów kwalifikacyjnych',
-    description:
-      'Przygotuj się do rozmów o pracę z native speakerami, zyskaj pewność i gotowe odpowiedzi.',
   },
   {
     icon: <Puzzle className="w-8 h-8 mx-auto  text-[var(--color-accent)]" />,

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import type { StripePrice } from '@/constants/types'
+import { Button } from '@/components/ui/button'
 
 export function PricingSection() {
   const [prices, setPrices] = useState<StripePrice[]>([])
@@ -16,7 +17,7 @@ export function PricingSection() {
   }, [])
 
   return (
-    <section id="pricing" className="py-24 ">
+    <section id="pricing" className="my-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-4xl font-bold leading-12 dark:text-gray-100 mb-4">
@@ -135,6 +136,21 @@ export function PricingSection() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-12">
+          <div className="flex justify-center items-center gap-5">
+            <p className="text-xl">
+              Dalej się zastanawiasz? Umów się na darmową lekcje próbną! ➡️
+            </p>
+            <Button
+              className="cursor-pointer text-md font-semibold border-2 border-dashed border-white rounded-full py-2 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
+              onClick={() =>
+                window.open('https://calendly.com/mr-smeett/darmowa-lekcja')
+              }
+            >
+              Darmowa lekcja próbna
+            </Button>
+          </div>
         </div>
       </div>
     </section>

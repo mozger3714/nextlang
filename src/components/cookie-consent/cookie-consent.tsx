@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { X } from 'lucide-react'
 
-export default function CookieConsent() {
+export function CookieConsent() {
   const [visible, setVisible] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
 

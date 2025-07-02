@@ -9,13 +9,13 @@ import {
 } from '@clerk/nextjs'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
 import { ArrowRight, ArrowBigUp, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import ColorModeToggler from '../color-mode-toggler/color-mode-toggler'
 import { useTheme } from 'next-themes'
 
-export default function Header() {
+export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { theme } = useTheme()
   const [isReady, setIsReady] = useState(false)

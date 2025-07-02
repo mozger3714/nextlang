@@ -1,8 +1,4 @@
-import Header from '@/components/header/header'
-import { Footer } from '@/components/footer/footer'
-import { Container } from '@/components/container/container'
-import CookieConsent from '@/components/cookie-consent/cookie-consent'
-
+import { Header, Container, CookieConsent, Footer } from '@/components'
 export default function MarketingLayout({
   children,
 }: {
