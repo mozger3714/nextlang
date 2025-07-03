@@ -104,9 +104,9 @@ export function PricingSection() {
                     <span className="text-[var(--color-accent)]">
                       {price.currency.toUpperCase()}
                     </span>
-                  </p>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm">
-                    / {price.recurring?.interval}
+                    <span className="text-gray-500 dark:text-gray-400 text-sm">
+                      / {price.recurring?.interval}
+                    </span>
                   </p>
                 </div>
 
@@ -120,7 +120,7 @@ export function PricingSection() {
                   </button>
                 </form>
 
-                <div className="mt-4 text-center">
+                {/* <div className="mt-4 text-center">
                   <div className="text-xs text-gray-500 dark:text-gray-400">
                     <details className="inline-block">
                       <summary className="cursor-pointer hover:text-[var(--color-accent)] transition-colors">
@@ -132,18 +132,18 @@ export function PricingSection() {
                       </p>
                     </details>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
         </div>
         <div className="text-center mt-12">
           <div className="flex justify-center items-center gap-5">
-            <p className="text-xl">
+            <p className="text-xl lg:text-2xl">
               Dalej się zastanawiasz? Umów się na darmową lekcje próbną! ➡️
             </p>
             <Button
-              className="cursor-pointer text-md font-semibold border-2 border-white rounded-full py-2 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
+              className="cursor-pointer text-lg font-semibold border-2 border-dashed border-white rounded-full py-2 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
               onClick={() =>
                 window.open('https://calendly.com/mr-smeett/darmowa-lekcja')
               }

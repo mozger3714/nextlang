@@ -59,17 +59,17 @@ export function ProblemsSection() {
       description:
         'Powtarzasz te same zwroty i czujesz, że Twój język nie odzwierciedla Twojego poziomu wiedzy.',
     },
-    {
-      id: 5,
-      title: (
-        <>
-          Nie rozumiesz, gdy ktoś mówi{' '}
-          <span className="text-[var(--color-accent)]">szybko</span>?
-        </>
-      ),
-      description:
-        'Kiedy Anglik lub Amerykanin przyspiesza, gubisz się po kilku sekundach i odcinasz się od rozmowy.',
-    },
+    // {
+    //   id: 5,
+    //   title: (
+    //     <>
+    //       Nie rozumiesz, gdy ktoś mówi{' '}
+    //       <span className="text-[var(--color-accent)]">szybko</span>?
+    //     </>
+    //   ),
+    //   description:
+    //     'Kiedy Anglik lub Amerykanin przyspiesza, gubisz się po kilku sekundach i odcinasz się od rozmowy.',
+    // },
     {
       id: 6,
       title: (
@@ -81,18 +81,18 @@ export function ProblemsSection() {
       description:
         'Twoje zdania są poprawne, ale brzmią jak z podręcznika. Brakuje Ci swobody i autentyczności.',
     },
-    {
-      id: 7,
-      title: (
-        <>
-          Brakuje Ci{' '}
-          <span className="text-[var(--color-accent)]">pewności siebie</span> na
-          spotkaniach?
-        </>
-      ),
-      description:
-        'Wiesz, co chcesz powiedzieć, ale w anglojęzycznym środowisku czujesz się niepewnie i biernie.',
-    },
+    // {
+    //   id: 7,
+    //   title: (
+    //     <>
+    //       Brakuje Ci{' '}
+    //       <span className="text-[var(--color-accent)]">pewności siebie</span> na
+    //       spotkaniach?
+    //     </>
+    //   ),
+    //   description:
+    //     'Wiesz, co chcesz powiedzieć, ale w anglojęzycznym środowisku czujesz się niepewnie i biernie.',
+    // },
     // {
     //   id: 8,
     //   title: 'Unikasz rozmów z obawy przed oceną?',

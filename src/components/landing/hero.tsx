@@ -9,14 +9,36 @@ export function Hero() {
       <div className="flex w-full flex-col-reverse lg:flex-row items-center justify-between gap-8 ">
         {/* Left side */}
         <div className="flex-1 text-center lg:text-left space-y-6">
-          <h1 className="text-3xl sm:text-5xl 2xl:text-6xl font-bold leading-tight text-balance">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            aria-hidden="true"
+          >
+            <h1 className="text-3xl sm:text-5xl 2xl:text-6xl font-bold leading-tight text-balance">
+              Popraw swój{' '}
+              <span className="text-[var(--color-accent)]">angielski</span>
+            </h1>
+          </motion.div>
+          {/* <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            aria-hidden="true"
+          >
+            <p className="text-3xl sm:text-5xl 2xl:text-5xl font-bold leading-tight text-balance text-center">
+              ⬇️
+            </p>
+          </motion.div> */}
+
+          <h2 className="text-3xl sm:text-4xl 2xl:text-5xl font-bold leading-tight text-balance">
             <span className="sr-only">
               Zrób większą karierę. Osiągnij wyższe zarobki. Znajdź pracę w IT.
             </span>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               aria-hidden="true"
             >
               Zrób większą{' '}
@@ -25,7 +47,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
               aria-hidden="true"
             >
               Osiągnij wyższe{' '}
@@ -34,17 +56,17 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
+              transition={{ duration: 0.8, delay: 1.7 }}
               aria-hidden="true"
             >
               Znajdź pracę w{' '}
               <span className="text-[var(--color-accent)]">IT</span>
             </motion.div>
-          </h1>
+          </h2>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.2 }}
+            transition={{ duration: 0.8, delay: 2.3 }}
           >
             <h2 className="text-muted-foreground text-xl max-w-2xl font-normal">
               <strong>Angielski w IT</strong> to nie atut. To{' '}
