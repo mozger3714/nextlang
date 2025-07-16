@@ -2,13 +2,14 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { motion } from 'motion/react'
+import Link from 'next/link'
 
 export function Hero() {
   return (
     <section className="h-screen flex items-center w-full">
       <div className="flex w-full flex-col-reverse lg:flex-row items-center justify-between gap-8 ">
         {/* Left side */}
-        <div className="flex-1 text-center lg:text-left space-y-6">
+        <div className="flex-1 text-center lg:text-left space-y-5">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -20,18 +21,19 @@ export function Hero() {
               <span className="text-[var(--color-accent)]">angielski</span>
             </h1>
           </motion.div>
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             aria-hidden="true"
           >
-            <p className="text-3xl sm:text-5xl 2xl:text-5xl font-bold leading-tight text-balance text-center">
-              ⬇️
+            <p className="text-lg lg:text-2xl 2xl:text-3xl font-thin mt-[-1rem]">
+              Specjalnie dla branży IT.
             </p>
-          </motion.div> */}
+            <p className="mt-3">{'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'}</p>
+          </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl 2xl:text-5xl font-bold leading-tight text-balance">
+          <h2 className="text-2xl sm:text-3xl 2xl:text-4xl font-bold leading-tight text-balance space-y-2">
             <span className="sr-only">
               Zrób większą karierę. Osiągnij wyższe zarobki. Znajdź pracę w IT.
             </span>
@@ -41,7 +43,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.8 }}
               aria-hidden="true"
             >
-              Zrób większą{' '}
+              💼 Zrób większą{' '}
               <span className="text-[var(--color-accent)]">karierę</span>
             </motion.div>
             <motion.div
@@ -50,7 +52,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 1.3 }}
               aria-hidden="true"
             >
-              Osiągnij wyższe{' '}
+              💰 Osiągnij wyższe{' '}
               <span className="text-[var(--color-accent)]">zarobki</span>
             </motion.div>
             <motion.div
@@ -59,14 +61,25 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 1.7 }}
               aria-hidden="true"
             >
-              Znajdź pracę w{' '}
+              👨‍💻 Znajdź pracę w{' '}
               <span className="text-[var(--color-accent)]">IT</span>
             </motion.div>
           </h2>
           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 2.4 }}
+          >
+            <Link href="#module-material">
+              <Button className="bg-[var(--color-accent)] text-white font-bold cursor-pointer rounded-full hover:scale-105 transition-transform h-14 text-lg px-6">
+                Dowiedz się więcej
+              </Button>
+            </Link>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.3 }}
+            transition={{ duration: 0.8, delay: 3.0 }}
           >
             <h2 className="text-muted-foreground text-xl max-w-2xl font-normal">
               <strong>Angielski w IT</strong> to nie atut. To{' '}
@@ -83,15 +96,6 @@ export function Hero() {
               </span>{' '}
               znajomości angielskiego. Zbuduj swój angielski jak mistrz kodu.
             </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.8 }}
-          >
-            <Button className="mt-4 bg-[var(--color-accent)] text-white font-bold cursor-pointer rounded-full hover:scale-105 transition-transform h-14 text-lg px-6">
-              Dowiedz się więcej
-            </Button>
           </motion.div>
         </div>
 

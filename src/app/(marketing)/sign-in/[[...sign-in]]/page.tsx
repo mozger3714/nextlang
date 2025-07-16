@@ -6,11 +6,11 @@ export default function Page() {
     <div className="flex items-center justify-center bg-background gap-16 py-8">
       <SignIn />
       <Image
-        src="/sign-image.jpg"
-        alt="Przyotwarty laptop"
-        width={460}
-        height={680}
-        className="w-full h-auto object-cover object-center rounded-lg shadow-lg"
+        src="/header.jpg"
+        alt="Konwersacja w korporacji"
+        width={530}
+        height={530}
+        className="rounded-lg shadow-lg"
       />
     </div>
   )
