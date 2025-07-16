@@ -8,8 +8,9 @@ import { ThemeInitializer } from './theme-init'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'SpeakLab English Academy - English for Developers',
-  description: 'English for IT and Developers – Learn the smart way.',
+  title: 'SpeakLab English Academy - Angielski dla IT ',
+  description:
+    'Ucz się angielskiego z myślą o IT. Zdobądź pracę programisty, podnieś zarobki i rozwijaj swoją karierę w branży technologicznej.',
 }
 
 export default function RootLayout({

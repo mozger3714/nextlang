@@ -1,14 +1,13 @@
-// app/blog/[slug]/page.tsx
 import { getPost } from '@/lib/markdown'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
-export async function generateMetadata({
-  params,
-}: {
+type Props = {
   params: { slug: string }
-}): Promise<Metadata> {
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params.slug)
   if (!post) return {}
 

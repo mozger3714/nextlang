@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     'angielski dla programistów',
   ],
   alternates: {
-    canonical: 'https://twojadomena.pl/',
+    canonical: 'https://speaklab.pl/',
   },
   openGraph: {
     title: 'Angielski dla IT – Zrób karierę, zarabiaj więcej, pracuj globalnie',
     description:
       'Zdobądź przewagę na rynku pracy dzięki skutecznej nauce angielskiego IT.',
-    url: 'https://twojadomena.pl/',
+    url: 'https://speaklab.pl/',
     siteName: 'SpeakLab English Academy',
     locale: 'pl_PL',
     type: 'website',
