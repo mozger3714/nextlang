@@ -72,10 +72,10 @@ export function Header() {
                 Cennik
               </Link>
               <Link
-                href="/blog"
+                href="#module-material"
                 className="hover:text-primary p-2 transition-colors duration-300 smooth-underline"
               >
-                Blog
+                Zobacz nasz program
               </Link>
               <Link
                 href="#contact"
