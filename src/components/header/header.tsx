@@ -91,7 +91,7 @@ export function Header() {
             <Button
               className="cursor-pointer text-md font-semibold border-2 border-dashed border-white rounded-full py-4 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
               onClick={() =>
-                window.open('https://calendly.com/mr-smeett/darmowa-lekcja')
+                window.open('https://calendly.com/speaklab-pl/darmowa-lekcja')
               }
             >
               Darmowa lekcja próbna
@@ -165,14 +165,14 @@ export function Header() {
                 onClick={() => setMenuOpen(false)}
                 className="w-full py-4 border-b border-border/20 text-center hover:text-primary transition-colors"
               >
-                Pricing
+                Cennik
               </Link>
               <Link
-                href="/blog"
+                href="#module-material"
                 onClick={() => setMenuOpen(false)}
                 className="w-full py-4 border-b border-border/20 text-center hover:text-primary transition-colors"
               >
-                Blog
+                Program zajęć
               </Link>
               <Link
                 href="#contact"
@@ -180,14 +180,16 @@ export function Header() {
                 onClick={() => setMenuOpen(false)}
                 className="w-full py-4 border-b border-border/20 text-center hover:text-primary transition-colors"
               >
-                Contact
+                Kontakt
               </Link>
 
               <div className="w-full flex flex-col gap-4 pt-8">
                 <Button
                   className="cursor-pointer text-md font-semibold border-2 border-dashed border-white rounded-full py-6 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
                   onClick={() =>
-                    window.open('https://calendly.com/mr-smeett/darmowa-lekcja')
+                    window.open(
+                      'https://calendly.com/speaklab-pl/darmowa-lekcja'
+                    )
                   }
                 >
                   Darmowa lekcja próbna

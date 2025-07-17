@@ -145,7 +145,7 @@ export function PricingSection() {
             <Button
               className="cursor-pointer text-lg font-semibold border-2 border-dashed border-white rounded-full py-2 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
               onClick={() =>
-                window.open('https://calendly.com/mr-smeett/darmowa-lekcja')
+                window.open('https://calendly.com/speaklab-pl/darmowa-lekcja')
               }
             >
               Darmowa lekcja próbna
