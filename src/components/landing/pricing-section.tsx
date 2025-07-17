@@ -17,7 +17,7 @@ export function PricingSection() {
   }, [])
 
   return (
-    <section id="pricing" className="my-16">
+    <section id="pricing" className="my-8 lg:my-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-4xl font-bold leading-12 dark:text-gray-100 mb-4">
@@ -137,8 +137,8 @@ export function PricingSection() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <div className="flex justify-center items-center gap-5">
+        <div className="text-center mt-8 lg:mt-12">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-5">
             <p className="text-xl lg:text-2xl">
               Dalej się zastanawiasz? Umów się na darmową lekcje próbną! ➡️
             </p>

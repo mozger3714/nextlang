@@ -1,6 +1,9 @@
 export function ContactSection() {
   return (
-    <section id="contact" className="py-28 bg-muted/50 dark:bg-[#1e1e2f]/80">
+    <section
+      id="contact"
+      className="pt-12 pb-28 bg-muted/50 dark:bg-[#1e1e2f]/80"
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
