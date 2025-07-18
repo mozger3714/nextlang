@@ -108,11 +108,12 @@ export function Hero() {
           >
             <Image
               src="/header-1.gif"
-              alt="Konwersacje po angielsku"
+              alt="Konwersacje po angielsku w IT"
               width={600}
               height={600}
               className="w-full h-auto object-cover rounded-lg "
               priority
+              unoptimized
             />
           </motion.div>
         </div>
