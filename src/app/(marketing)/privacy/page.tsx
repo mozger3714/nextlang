@@ -14,8 +14,9 @@ export default function PrivacyPolicy() {
       </h2>
       <p className="mb-4">
         Administratorem danych osobowych jest właściciel jednoosobowej
-        działalności gospodarczej SK SAS CONSULTING prowadzącej SpeakLab English
-        Academy z siedzibą na ul. Szlak 77/222, 31-153 Kraków.
+        działalności gospodarczej SK SAS CONSULTING nr. REGON: 542244550
+        prowadzącej SpeakLab English Academy z siedzibą ul. Szlak 77/222, 31-153
+        Kraków.
       </p>
       <h2 className="text-2xl font-semibold mt-6 mb-4">
         2. Jakie dane zbieramy

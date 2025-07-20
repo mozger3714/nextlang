@@ -113,7 +113,7 @@ export function ModuleMaterialSection() {
               className="group border-0"
             >
               <AccordionTrigger className="flex items-center justify-between w-full p-6 text-left hover:no-underline cursor-pointer rounded-xl bg-white/70 dark:bg-[#2d2d42]/70 backdrop-blur-sm border border-gray-200 dark:border-gray-800 transition-all hover:border-[var(--color-accent)]/30 group-hover:shadow-lg">
-                <span className="text-xl font-medium text-gray-800 dark:text-gray-100">
+                <span className="text-lg lg:text-xl font-medium text-gray-800 dark:text-gray-100">
                   {module.title}
                 </span>
               </AccordionTrigger>

@@ -7,7 +7,7 @@ import Link from 'next/link'
 export function Hero() {
   return (
     <section className="h-screen flex items-center w-full">
-      <div className="flex w-full flex-col-reverse lg:flex-row items-center justify-between gap-8 ">
+      <div className="flex w-full flex-col-reverse lg:flex-row items-center justify-between gap-4 lg:gap-8 ">
         {/* Left side */}
         <div className="flex-1 text-center lg:text-left space-y-5">
           <motion.div
@@ -111,7 +111,7 @@ export function Hero() {
               alt="Konwersacje po angielsku w IT"
               width={600}
               height={600}
-              className="w-full h-auto object-cover rounded-lg "
+              className="w-full h-auto object-cover rounded-lg"
               priority
               unoptimized
             />

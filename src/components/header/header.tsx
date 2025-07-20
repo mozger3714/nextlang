@@ -43,7 +43,11 @@ export function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between py-4 h-16 border-b border-border md:border-none relative z-50">
+      <header
+        className={`sticky top-0 bg-[var(--background)] flex items-center justify-between py-4 h-16 border-b border-border ${
+          showScrollTop ? 'md:border-b' : 'md:border-none'
+        } z-50`}
+      >
         <div className="container flex items-center justify-between h-16 px-4 mx-auto">
           {/* Logo */}
           <div className="flex items-center gap-2 md:gap-8">
@@ -75,7 +79,7 @@ export function Header() {
                 href="#module-material"
                 className="hover:text-primary p-2 transition-colors duration-300 smooth-underline"
               >
-                Zobacz nasz program
+                Program
               </Link>
               <Link
                 href="#contact"
@@ -152,13 +156,13 @@ export function Header() {
 
           {/* Mobile Menu */}
           <div
-            className={`fixed inset-0 w-full h-screen bg-background/95 backdrop-blur-xl transition-all duration-300 ease-in-out transform ${
+            className={`fixed inset-0 w-full mt-16 h-screen bg-background/95 backdrop-blur-xl transition-all duration-300 ease-in-out transform ${
               menuOpen
                 ? 'translate-y-0 opacity-100 z-40 pt-20 px-4'
                 : '-translate-y-full opacity-0 -z-10'
             } md:hidden`}
           >
-            <div className="flex flex-col items-center gap-8 text-xl font-medium">
+            <div className="flex flex-col items-center gap-8 text-xl font-medium px-4">
               <Link
                 href="#pricing"
                 scroll={true}
@@ -183,14 +187,15 @@ export function Header() {
                 Kontakt
               </Link>
 
-              <div className="w-full flex flex-col gap-4 pt-8">
+              <div className="w-full flex flex-col gap-4 pt-8 px-4">
                 <Button
                   className="cursor-pointer text-md font-semibold border-2 border-dashed border-white rounded-full py-6 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
-                  onClick={() =>
+                  onClick={() => {
                     window.open(
                       'https://calendly.com/speaklab-pl/darmowa-lekcja'
                     )
-                  }
+                    setMenuOpen(false)
+                  }}
                 >
                   Darmowa lekcja próbna
                 </Button>

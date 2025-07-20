@@ -10,7 +10,7 @@ export default function Page() {
         alt="Konwersacja w korporacji"
         width={530}
         height={530}
-        className="rounded-lg shadow-lg"
+        className="hidden lg:flex rounded-lg shadow-lg"
       />
     </div>
   )

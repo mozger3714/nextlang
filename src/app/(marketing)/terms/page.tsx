@@ -37,11 +37,6 @@ export default function Terms() {
             Subskrypcję można anulować w każdej chwili – dostęp pozostaje do
             końca opłaconego okresu,
           </li>
-          <li>
-            W przypadku niezadowolenia klienta oferujemy{' '}
-            <b>100% zwrot pieniędzy w ciągu 7 dni</b> od rozpoczęcia pierwszego
-            miesiąca nauki (nie dotyczy lekcji próbnej).
-          </li>
         </ul>
       </p>
       <h2 className="text-2xl font-semibold mt-6 mb-4">

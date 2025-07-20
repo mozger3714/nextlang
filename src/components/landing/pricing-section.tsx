@@ -19,7 +19,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="my-8 lg:my-16">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-6 lg:mb-12">
           <h2 className="text-2xl sm:text-4xl font-bold leading-12 dark:text-gray-100 mb-4">
             Cennik
           </h2>
@@ -140,7 +140,9 @@ export function PricingSection() {
         <div className="text-center mt-8 lg:mt-12">
           <div className="flex flex-col lg:flex-row justify-center items-center gap-5">
             <p className="text-xl lg:text-2xl">
-              Dalej się zastanawiasz? Umów się na darmową lekcje próbną! ➡️
+              Dalej się zastanawiasz? Umów się na darmową lekcje próbną!{' '}
+              <span className="hidden lg:inline">➡️</span>
+              <span className="lg:hidden">⬇️</span>
             </p>
             <Button
               className="cursor-pointer text-lg font-semibold border-2 border-dashed border-white rounded-full py-2 bg-[var(--color-accent)] text-white hover:scale-110 transition-transform"
