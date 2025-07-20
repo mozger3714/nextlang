@@ -8,7 +8,7 @@ import { ThemeInitializer } from './theme-init'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'SpeakLab English Academy - Angielski dla IT ',
+  title: 'SpeakLab English Academy - Angielski dla IT. ',
   description:
     'Ucz się angielskiego z myślą o IT. Zdobądź pracę programisty, podnieś zarobki i rozwijaj swoją karierę w branży technologicznej.',
 }
