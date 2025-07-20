@@ -2,6 +2,16 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CheckCircle2 } from 'lucide-react'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Thank You - Speaklab English Academy',
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
+
 export default function ThankYouPage() {
   return (
     <section className="my-16 flex items-center justify-center">
