@@ -4,6 +4,7 @@ import Stripe from 'stripe'
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-03-31.basil',
 })
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
 
 export async function POST(req: Request) {
   const body = await req.formData()
@@ -23,8 +24,8 @@ export async function POST(req: Request) {
       },
     ],
     allow_promotion_codes: true,
-    success_url: 'http://localhost:3000/dashboard?success=true',
-    cancel_url: 'http://localhost:3000/pricing?canceled=true',
+    success_url: `${baseUrl}/thank-you?success=true`,
+    cancel_url: `${baseUrl}/?canceled=true`,
   })
 
   return NextResponse.redirect(session.url!, 303)
