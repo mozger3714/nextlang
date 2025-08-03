@@ -118,7 +118,7 @@ export function ProblemsSection() {
           >
             <h2 className="text-2xl sm:text-4xl font-bold leading-12 dark:text-gray-900 mb-4 text-center lg:text-left">
               Coś z tego brzmi{' '}
-              <span className="text-[var(--color-accent)]">znajomie</span>
+              <span className="text-[var(--color-accent)]">znajomo</span>
               🤔?
             </h2>
             <p className="text-gray-600 text-center lg:text-left mb-4">

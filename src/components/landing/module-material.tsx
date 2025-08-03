@@ -91,7 +91,7 @@ const moduleAreas = [
 export function ModuleMaterialSection() {
   return (
     <section
-      className="py-20 bg-muted/50 dark:bg-[#1e1e2f]/80"
+      className="py-16 bg-muted/50 dark:bg-[#1e1e2f]/80"
       id="module-material"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">

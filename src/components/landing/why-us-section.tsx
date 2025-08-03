@@ -10,9 +10,9 @@ import {
 const features = [
   {
     icon: <Mic className="w-8 h-8 mx-auto  text-[var(--color-accent)]" />,
-    title: 'Główny nacisk na mówienię',
+    title: 'Główny nacisk na mówienie',
     description:
-      'Odblokuj się, przełamaj barierę i zacznij wreście mówić płynnie',
+      'Odblokuj się, przełamaj barierę i zacznij wreszcie mówić płynnie',
   },
   {
     icon: <Compass className="w-8 h-8 mx-auto  text-[var(--color-accent)]" />,
@@ -50,7 +50,7 @@ const features = [
 
 export function WhyUsSection() {
   return (
-    <section className="py-20">
+    <section className="py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-6">
           Dlaczego <span className="text-[var(--color-accent)]">my</span>?

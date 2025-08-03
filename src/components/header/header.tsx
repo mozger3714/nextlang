@@ -70,16 +70,16 @@ export function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex gap-10 text-md font-medium">
               <Link
-                href="#pricing"
-                className="hover:text-primary p-2 transition-colors duration-300 smooth-underline"
-              >
-                Cennik
-              </Link>
-              <Link
                 href="#module-material"
                 className="hover:text-primary p-2 transition-colors duration-300 smooth-underline"
               >
                 Program
+              </Link>
+              <Link
+                href="#pricing"
+                className="hover:text-primary p-2 transition-colors duration-300 smooth-underline"
+              >
+                Cennik
               </Link>
               <Link
                 href="#contact"
@@ -164,19 +164,19 @@ export function Header() {
           >
             <div className="flex flex-col items-center gap-8 text-xl font-medium px-4">
               <Link
+                href="#module-material"
+                onClick={() => setMenuOpen(false)}
+                className="w-full py-4 border-b border-border/20 text-center hover:text-primary transition-colors"
+              >
+                Program zajęć
+              </Link>
+              <Link
                 href="#pricing"
                 scroll={true}
                 onClick={() => setMenuOpen(false)}
                 className="w-full py-4 border-b border-border/20 text-center hover:text-primary transition-colors"
               >
                 Cennik
-              </Link>
-              <Link
-                href="#module-material"
-                onClick={() => setMenuOpen(false)}
-                className="w-full py-4 border-b border-border/20 text-center hover:text-primary transition-colors"
-              >
-                Program zajęć
               </Link>
               <Link
                 href="#contact"

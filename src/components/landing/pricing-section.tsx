@@ -23,10 +23,15 @@ export function PricingSection() {
           <h2 className="text-2xl sm:text-4xl font-bold leading-12 dark:text-gray-100 mb-4">
             Cennik
           </h2>
-          <p className="text-muted-foreground max-w-xl text-lg font-semibold mx-auto">
+          <p className="text-muted-foreground max-w-2xl text-lg font-semibold mx-auto">
             Wybierz plan dopasowany do{' '}
             <span className="text-[var(--color-accent)] font-bold">
               Twoich potrzeb
+            </span>
+            . Odzwonimy w ciągu 24h, aby ustalić szczegóły
+            <span className="hidden lg:inline">
+              {' '}
+              lub umów się na darmową lekcję próbną!
             </span>
           </p>
         </div>

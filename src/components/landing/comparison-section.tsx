@@ -22,13 +22,13 @@ const withUsPoints = [
 
 export function ComparisonSection() {
   return (
-    <section className="py-16">
+    <section className="py-8 xl:py-16">
       <div className="container max-w-7xl mx-auto text-center px-4">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
           Samodzielna nauka vs. nauka{' '}
           <span className="text-[var(--color-accent)]">z nami</span>
         </h2>
-        <p className="mb-12 text-lg">
+        <p className="mb-12 text-md lg:text-lg">
           Zobacz, jak różni się nauka w pojedynkę od pracy z nami, kiedy wiemy
           dokładnie, co działa i prowadzimy Cię krok po kroku. Nasz program jest
           przemyślany, a każdy krok jest zaplanowany tak, abyś mógł osiągnąć
