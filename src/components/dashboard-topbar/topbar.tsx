@@ -15,10 +15,7 @@ export function Topbar() {
     setIsReady(true)
   }, [])
 
-  // Always use dark theme until hydration completes
   const displayTheme = isReady ? theme : 'dark'
-
-  console.log('Current theme:', displayTheme)
 
   return (
     <header className="flex items-center justify-between p-4 h-16 border-b border-border relative z-50 w-full">
@@ -26,7 +23,7 @@ export function Topbar() {
         href="/"
         className="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-[var(--color-accent)] transition"
       >
-        <ArrowLeft /> Back to Home page
+        <ArrowLeft /> Strona główna
       </Link>
       <Image
         src={

@@ -12,13 +12,19 @@ export default function DashboardShell({
 }: {
   children: React.ReactNode
 }) {
-
   return (
-    <div className={cn('min-h-screen flex flex-col', inter.className)}>
+    <div
+      className={cn(
+        'min-h-screen flex flex-col bg-gradient-to-b from-background to-muted/5',
+        inter.className
+      )}
+    >
       <Topbar />
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-hidden relative">
         <Sidebar />
-        <main className="flex-1 p-6 overflow-y-auto">{children}</main>
+        <main className="flex-1 p-6 overflow-y-auto">
+          <div className="max-w-7xl mx-auto">{children}</div>
+        </main>
       </div>
     </div>
   )

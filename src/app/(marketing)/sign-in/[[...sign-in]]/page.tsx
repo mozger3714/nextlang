@@ -8,8 +8,8 @@ export default function Page() {
       <Image
         src="/header.jpg"
         alt="Konwersacja w korporacji"
-        width={530}
-        height={530}
+        width={500}
+        height={500}
         className="hidden lg:flex rounded-lg shadow-lg"
       />
     </div>
