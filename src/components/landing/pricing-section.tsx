@@ -28,11 +28,8 @@ export function PricingSection() {
             <span className="text-[var(--color-accent)] font-bold">
               Twoich potrzeb
             </span>
-            . Odzwonimy w ciągu 24h, aby ustalić szczegóły
-            <span className="hidden lg:inline">
-              {' '}
-              lub umów się na darmową lekcję próbną!
-            </span>
+            . Skontaktujemy się w ciągu 24h, aby ustalić szczegóły lub umów się
+            na darmową lekcję próbną!
           </p>
         </div>
 
@@ -42,13 +39,8 @@ export function PricingSection() {
               key={price.id}
               className="relative group overflow-hidden rounded-2xl bg-gradient-to-b from-[var(--background)] to-[#f0e8dd] dark:from-[#1a1a2e] dark:to-[#23233a]"
             >
-              {/* Glass card background */}
               <div className="absolute inset-0 bg-white/20 dark:bg-black/20 backdrop-blur-lg border border-white/30 dark:border-gray-600/30 rounded-2xl shadow-xl" />
-
-              {/* 3D effect border */}
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-[var(--color-accent)]/30 rounded-2xl transition-all duration-300" />
-
-              {/* Inner glow */}
               <div
                 className="absolute inset-0 rounded-2xl pointer-events-none"
                 style={{
@@ -124,20 +116,6 @@ export function PricingSection() {
                     Zapisz się →
                   </button>
                 </form>
-
-                {/* <div className="mt-4 text-center">
-                  <div className="text-xs text-gray-500 dark:text-gray-400">
-                    <details className="inline-block">
-                      <summary className="cursor-pointer hover:text-[var(--color-accent)] transition-colors">
-                        Gwarancja zwrotu pieniędzy
-                      </summary>
-                      <p className="mt-2 p-2 bg-white/30 dark:bg-black/30 rounded-lg text-gray-700 dark:text-gray-300">
-                        Pełny zwrot pieniędzy w ciągu 7 dni, jeśli nie jesteś
-                        zadowolony/a.
-                      </p>
-                    </details>
-                  </div>
-                </div> */}
               </div>
             </div>
           ))}
