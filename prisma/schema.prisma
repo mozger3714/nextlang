@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -8,11 +7,300 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+enum EnrollmentType {
+  INDIVIDUAL
+  GROUP
+}
+
+enum SubscriptionStatus {
+  INCOMPLETE
+  INCOMPLETE_EXPIRED
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  UNPAID
+  PAUSED
+  INACTIVE
+}
+
+enum BillingInterval {
+  DAY
+  WEEK
+  MONTH
+  YEAR
+}
+
+enum MediaKind {
+  IMAGE
+  VIDEO
+  FILE
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  SCHEDULED
+  ARCHIVED
+}
+
+enum SignupStatus {
+  PENDING
+  CONFIRMED
+  ATTENDED
+  NO_SHOW
+  CANCELED
+}
+
 model User {
-  id          String   @id @default(cuid())
-  email       String   @unique
-  clerkId     String   @unique
-  stripeId    String?  @unique
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id            String   @id @default(cuid())
+  email         String   @unique @db.VarChar(320)
+  name          String?  @db.VarChar(255)
+  surname       String?  @db.VarChar(255)
+  phone         String?  @db.VarChar(20)
+  emailVerified Boolean? @default(false)
+  phoneVerified Boolean? @default(false)
+
+  role           UserRole        @default(STUDENT)
+  enrollmentType EnrollmentType?
+  isCompany      Boolean         @default(false)
+  companyName    String?         @db.VarChar(255)
+
+  // Clerk + Stripe linkage
+  clerkId          String  @unique
+  stripeCustomerId String? @unique
+
+  subscriptions Subscription[]
+  invoices      Invoice[]
+  posts         Post[]         @relation("PostAuthor")
+
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  WebinarSignup WebinarSignup[]
+
+  @@index([email])
+}
+
+model Plan {
+  id          String         @id @default(cuid())
+  name        String
+  slug        String         @unique
+  description String?
+  kind        EnrollmentType // INDIVIDUAL / GROUP
+
+  stripeProductId String          @unique
+  stripePriceId   String          @unique
+  unitAmount      Int? // in minor units (e.g. 39900)
+  currency        String          @default("pln") @db.VarChar(10)
+  interval        BillingInterval @default(MONTH)
+  isActive        Boolean         @default(false)
+  features        Json?
+
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  Subscription Subscription[]
+}
+
+// --- Subscriptions & invoices for dashboard ---
+model Subscription {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  stripeSubscriptionId String             @unique
+  productId            String // Stripe product id
+  priceId              String // Stripe price id
+  status               SubscriptionStatus
+
+  currentPeriodStart DateTime
+  currentPeriodEnd   DateTime
+  cancelAtPeriodEnd  Boolean   @default(false)
+  canceledAt         DateTime?
+  trialEndsAt        DateTime?
+
+  planSlug String? // optional link to Plan.slug for quick joins
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  Invoice   Invoice[]
+
+  planId String?
+  plan   Plan?   @relation(fields: [planId], references: [id])
+
+  metadata Json?
+
+  @@index([userId])
+  @@index([status, currentPeriodEnd])
+}
+
+model Invoice {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  stripeInvoiceId  String @unique
+  stripeCustomerId String
+
+  subscriptionId String?
+  subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
+
+  amountDue        Int
+  amountPaid       Int
+  currency         String    @db.VarChar(10)
+  status           String    @db.VarChar(30)
+  hostedInvoiceUrl String?
+  invoicePdf       String?
+  periodStart      DateTime?
+  periodEnd        DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([subscriptionId])
+}
+
+// --- Media (store URLs, not blobs) ---
+model Media {
+  id           String    @id @default(cuid())
+  url          String
+  width        Int?
+  height       Int?
+  alt          String?
+  kind         MediaKind @default(IMAGE)
+  createdAt    DateTime  @default(now())
+  postCovers   Post[]    @relation("PostCover")
+  postOgImages Post[]    @relation("PostOgImage")
+}
+
+// --- Blog taxonomy ---
+model Tag {
+  id    String    @id @default(cuid())
+  name  String    @unique
+  slug  String    @unique
+  posts PostTag[]
+}
+
+model Category {
+  id    String         @id @default(cuid())
+  name  String         @unique
+  slug  String         @unique
+  posts PostCategory[]
+}
+
+model PostTag {
+  postId String
+  tagId  String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model PostCategory {
+  postId     String
+  categoryId String
+  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([postId, categoryId])
+}
+
+// --- Blog posts (DB-native, SSG/ISR-friendly) ---
+model Post {
+  id      String  @id @default(cuid())
+  title   String  @db.VarChar(255)
+  slug    String  @unique @db.VarChar(255)
+  excerpt String? @db.VarChar(500)
+
+  // Content format: structured JSON (blocks) for “no markdown” editing
+  content Json
+
+  status      PostStatus @default(DRAFT)
+  publishedAt DateTime?
+  scheduledAt DateTime?
+
+  // Author & media
+  authorId String?
+  author   User?   @relation("PostAuthor", fields: [authorId], references: [id])
+
+  coverId String?
+  cover   Media?  @relation("PostCover", fields: [coverId], references: [id], onDelete: SetNull)
+
+  ogImageId String?
+  ogImage   Media?  @relation("PostOgImage", fields: [ogImageId], references: [id], onDelete: SetNull)
+
+  // SEO
+  metaTitle          String? @db.VarChar(255)
+  metaDescription    String? @db.VarChar(500)
+  canonicalUrl       String? @db.VarChar(2048)
+  readingTimeMin     Int?
+  ogTitle            String? @db.VarChar(255)
+  ogDescription      String? @db.VarChar(500)
+  twitterTitle       String? @db.VarChar(255)
+  twitterDescription String? @db.VarChar(500)
+
+  // Tags/Cats
+  tags       PostTag[]
+  categories PostCategory[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  wordCount Int?
+
+  @@index([status, publishedAt])
+  @@index([slug])
+}
+
+// --- Webinary ---
+model Webinar {
+  id              String   @id @default(cuid())
+  title           String
+  description     String?
+  startsAt        DateTime
+  durationMinutes Int?
+  meetingUrl      String?
+  capacity        Int?
+
+  signups WebinarSignup[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model WebinarSignup {
+  id String @id @default(cuid())
+
+  webinarId String
+  webinar   Webinar @relation(fields: [webinarId], references: [id], onDelete: Cascade)
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  email   String  @db.VarChar(320)
+  name    String? @db.VarChar(255)
+  surname String? @db.VarChar(255)
+  phone   String? @db.VarChar(50)
+
+  consentMarketing Boolean?     @default(false)
+  source           String?      @db.VarChar(255) // e.g. "ads", "landing"
+  utm              Json?
+  status           SignupStatus @default(PENDING)
+
+  ip          String?   @db.VarChar(64)
+  userAgent   String?   @db.VarChar(1024)
+  token       String? // for double opt-in
+  confirmedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([webinarId, email])
+  @@index([userId])
 }
