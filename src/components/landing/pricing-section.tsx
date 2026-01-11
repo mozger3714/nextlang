@@ -33,7 +33,7 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {prices.map((price) => (
             <div
               key={price.id}
@@ -86,7 +86,7 @@ export function PricingSection() {
                                 ></path>
                               </svg>
                             </div>
-                            <span className="text-gray-800 dark:text-gray-200">
+                            <span className="text-gray-800 lg:text-lg dark:text-gray-200">
                               {feature}
                             </span>
                           </li>
